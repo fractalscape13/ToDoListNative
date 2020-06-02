@@ -2,10 +2,15 @@ import React from 'react';
 import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-native';
 
 export default function Form() {
+
+  function addItem() {
+    //adds item to firestore 
+  }
+
   return (
     <View style={styles.form}>
-      <TextInput style={styles.text} placeholder="Click to add item"/>
-      <TouchableOpacity><Text style={styles.button}>Submit</Text></TouchableOpacity>
+      <TextInput style={styles.text} placeholder="Enter new item"/>
+      <TouchableOpacity onPress={addItem}><Text style={styles.button}>Submit</Text></TouchableOpacity>
     </View>
   );
 }
@@ -13,7 +18,7 @@ export default function Form() {
 const styles = StyleSheet.create({
   form: {
     flex: 1,
-    backgroundColor: 'rgb(140, 170, 170)',
+    backgroundColor: 'rgb(150, 180, 180)',
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: 20,
