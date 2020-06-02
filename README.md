@@ -1,6 +1,6 @@
 # To-Do List with React Native
 
-#### June 2020_
+#### _June 2020_
 #### By _**Joseph Wangemann**_
 
 ## Description
@@ -30,4 +30,4 @@ _If you have any questions or comments at all, please submit a pull request._
 
 *This webpage is licensed under the MIT license.*
 
-Copyright (c) 2020 **_Joseph Wangemann**
+Copyright (c) 2020 **_Joseph Wangemann_**
