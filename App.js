@@ -1,19 +1,29 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import List from './components/List';
+import Form from './components/Form';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={styles.splash}>
+      <Text style={styles.title}>TO-DO LIST</Text>
+      <List />
+      <Form />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  splash: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgb(40, 40, 40)',
     alignItems: 'center',
-    justifyContent: 'center',
   },
+  title: {
+    fontSize: 50,
+    color: 'ivory',
+    marginTop: 50,
+    justifyContent: 'center',
+    marginBottom: 30,
+  }
 });
