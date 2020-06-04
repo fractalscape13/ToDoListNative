@@ -1,6 +1,21 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
+import List from '../screens/List';
+import Form from '../screens/Form';
+import Contact from '../screens/Contact';
 
-const Stack = createStackNavigator({})
+const screens = {
+  List: {
+    screen: List
+  },
+  Form: {
+    screen: Form
+  },
+  Contact: {
+    screen: Contact
+  }
+}
 
-export default Stack;
+const Stack = createStackNavigator(screens);
+
+export default createAppContainer(Stack);
