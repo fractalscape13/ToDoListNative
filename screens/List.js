@@ -11,7 +11,8 @@ export default function List({ navigation }) {
   })
 
   const pressHandler = () => {
-    navigation.navigate('Form')
+    navigation.navigate('Form');
+    // navigation.push('Form');
   }
 
   return (
