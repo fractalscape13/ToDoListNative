@@ -1,16 +1,21 @@
 import React from 'react';
 import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-native';
 
-export default function Form() {
+export default function Form({ navigation }) {
 
-  function addItem() {
+  const addItem = () => {
     //adds item to firestore 
+  }
+
+  const backToList = () => {
+    navigation.goBack();
   }
 
   return (
     <View style={styles.form}>
       <TextInput style={styles.text} placeholder="Enter new item"/>
       <TouchableOpacity onPress={addItem}><Text style={styles.button}>Submit</Text></TouchableOpacity>
+      <TouchableOpacity onPress={backToList}><Text style={styles.button}>Return to list</Text></TouchableOpacity>
     </View>
   );
 }
