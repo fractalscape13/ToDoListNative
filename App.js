@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import List from './components/List';
 import Form from './components/Form';
+import Contact from './components/Contact';
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Text style={styles.title}>TO-DO LIST</Text>
       <List />
       <Form />
+      <Contact />
     </View>
   );
 }
