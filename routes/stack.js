@@ -9,7 +9,6 @@ const screens = {
     screen: List,
     navigationOptions: {
       title: 'TO DO LIST',
-      headerStyle: { backgroundColor: 'rgb(180, 210, 210)' }
     }
   },
   Form: {
