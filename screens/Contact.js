@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
   contact: {
     flex: 1,
     backgroundColor: 'rgb(120, 150, 140)',
-    width: '80%',
     borderTopColor: 'ivory',
     borderStyle: 'solid',
     borderTopWidth: 5,

@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigator from './routes/stack';
+import Navigator from './routes/drawer';
 // import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {

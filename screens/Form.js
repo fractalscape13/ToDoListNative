@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
     paddingTop: '35%',
     fontSize: 20,
     color: 'white',
+    borderTopColor: 'ivory',
+    borderStyle: 'solid',
+    borderTopWidth: 5,
   },
   text: {
     fontSize: 22,

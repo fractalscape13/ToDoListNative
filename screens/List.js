@@ -34,6 +34,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgb(130, 160, 160)',
     paddingTop: 15,
+    borderTopColor: 'ivory',
+    borderStyle: 'solid',
+    borderTopWidth: 5,
   },
   item: {
     fontSize: 20,
