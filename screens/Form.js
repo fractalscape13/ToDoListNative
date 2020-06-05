@@ -14,7 +14,7 @@ export default function Form({ navigation }) {
   return (
     <View style={styles.form}>
       <TextInput style={styles.text} placeholder="Enter new item"/>
-      <TouchableOpacity onPress={addItem}><Text style={styles.button}>Submit</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('List', {item: 'new item'})}><Text style={styles.button}>Submit</Text></TouchableOpacity>
       <TouchableOpacity onPress={backToList}><Text style={styles.button}>Return to list</Text></TouchableOpacity>
     </View>
   );
