@@ -16,18 +16,19 @@ const screens = {
     screen: Form,
     navigationOptions: {
       title: 'Add an item',
-      headerStyle: { backgroundColor: 'rgb(180, 210, 210)' }
     }
   },
   Contact: {
     screen: Contact,
     navigationOptions: {
       title: 'Contact Us',
-      headerStyle: { backgroundColor: 'rgb(180, 210, 210)' }
     }
   }
 }
 
-const Stack = createStackNavigator(screens);
+const Stack = createStackNavigator(screens, { defaultNavigationOptions: {
+  headerStyle: { backgroundColor: 'rgb(180, 210, 210)' }
+  }
+});
 
 export default createAppContainer(Stack);
