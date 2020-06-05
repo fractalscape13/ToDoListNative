@@ -6,13 +6,25 @@ import Contact from '../screens/Contact';
 
 const screens = {
   List: {
-    screen: List
+    screen: List,
+    navigationOptions: {
+      title: 'TO DO LIST',
+      headerStyle: { backgroundColor: 'rgb(180, 210, 210)' }
+    }
   },
   Form: {
-    screen: Form
+    screen: Form,
+    navigationOptions: {
+      title: 'Add an item',
+      headerStyle: { backgroundColor: 'rgb(180, 210, 210)' }
+    }
   },
   Contact: {
-    screen: Contact
+    screen: Contact,
+    navigationOptions: {
+      title: 'Contact Us',
+      headerStyle: { backgroundColor: 'rgb(180, 210, 210)' }
+    }
   }
 }
 
