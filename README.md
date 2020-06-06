@@ -4,10 +4,10 @@
 #### By _**Joseph Wangemann**_
 
 ## Description
-_Simple to-do list built with React Native._
+_Simple to-do list built with React Native and Firebase_
 
 ## Specs / Screen Shots
-![Name](./assets/splash.png?raw=true "Desc")
+![Name](./assets/fadestack.png?raw=true "Desc")
 
 ## Installation/Setup Instructions
 
@@ -21,6 +21,8 @@ To run this project, you will:
 * React-Native
 * Expo CLI
 * Firebase
+* React-Navigation-Stack
+* React-Navigation-Drawer
 
 ## Known Bugs/Contact
 
