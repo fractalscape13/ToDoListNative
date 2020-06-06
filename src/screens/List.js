@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { CheckBox } from 'react-native-elements';
 import { db } from '../firebase';
 
 export default function List({ navigation }) {
@@ -8,19 +9,31 @@ export default function List({ navigation }) {
   useEffect(() => {
     db.ref('/list').on('value', snapshot => {
       let data = snapshot.val();
-      let items = Object.values(data);
-      console.log("items::::", items)
-      setList(items)
+      try {
+        let obj = Object.keys(data);
+        let items = Object.values(data);
+        for (let i=0; i<obj.length; i++) {
+          items[i].id = obj[i];
+        }
+        console.log("ITEMS", items)
+        setList(items)
+      } catch(error) {
+        setList([]);
+      }
     })
   }, [])
 
+  const handlePress = (id) => {
+    let itemRef = db.ref(`/list/${id}`);
+    itemRef.remove();
+  }
+
   let mappedList = list.map((item, i) => {
-    return <Text key={i} style={styles.item}> {item.name}</Text>
+    return <Text onPress={() => handlePress(item.id)}key={i} style={styles.item}>{item.name}</Text>
   })
 
   const pressHandler = () => {
     navigation.navigate('Form');
-    // navigation.push('Form');
   }
 
   return (
