@@ -1,8 +1,15 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import List from '../screens/List';
 import Form from '../screens/Form';
+import Splash from '../screens/Splash';
 
 const screens = {
+  Splash: {
+    screen: Splash,
+    navigationOptions: {
+      Title: 'Welcome!',
+    }
+  },
   List: {
     screen: List,
     navigationOptions: {

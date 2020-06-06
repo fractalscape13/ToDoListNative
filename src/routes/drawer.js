@@ -4,7 +4,7 @@ import contactStack from './contactStack';
 import Stack from './mainStack';
 
 const RootDrawer = createDrawerNavigator({
-  List: {
+  Home: {
     screen: Stack
   },
   Contact: {
