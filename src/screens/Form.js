@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-native';
+import { db } from '../firebase';
 
 export default function Form({ navigation }) {
+  const [item, setItem] = useState('');
 
   const addItem = () => {
-    //adds item to firestore 
+    db.ref('/list').push({
+      name: item
+    });
+    navigation.navigate('List')
   }
 
   const backToList = () => {
@@ -13,8 +18,8 @@ export default function Form({ navigation }) {
 
   return (
     <View style={styles.form}>
-      <TextInput style={styles.text} placeholder="Enter new item"/>
-      <TouchableOpacity onPress={() => navigation.navigate('List', {item: 'new item'})}><Text style={styles.button}>Submit</Text></TouchableOpacity>
+      <TextInput onChangeText={(text) => setItem(text)}style={styles.text} placeholder="Enter new item"/>
+      <TouchableOpacity onPress={addItem}><Text style={styles.button}>Submit</Text></TouchableOpacity>
       <TouchableOpacity onPress={backToList}><Text style={styles.button}>Return to list</Text></TouchableOpacity>
     </View>
   );

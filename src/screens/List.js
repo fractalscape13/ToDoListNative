@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { db } from '../firebase';
 
 export default function List({ navigation }) {
-  //add logic to pull all items from firebase and set as state
-  const [list, setList] = useState(['thangs', 'stuff', 'more thangs', 'stuff n thangs', 'endless thangs']);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    db.ref('/list').on('value', snapshot => {
+      let data = snapshot.val();
+      let items = Object.values(data);
+      console.log("items::::", items)
+      setList(items)
+    })
+  }, [])
 
   let mappedList = list.map((item, i) => {
-    return <Text key={i} style={styles.item}>~ {item}</Text>
+    return <Text key={i} style={styles.item}> {item.name}</Text>
   })
-  
-  if (navigation.getParam('item')) {
-  mappedList.push(<Text key={list.length + 1} style={styles.item}>~ {navigation.getParam('item')}</Text>)
-  }
-
 
   const pressHandler = () => {
     navigation.navigate('Form');
