@@ -15,7 +15,7 @@ To run this project, you will:
   * Clone the repository: `git clone https://github.com/fractalscape13/ToDoListNative`
   * Create Firebase project, add config file `firebase.js` to root project directory
   * In the root project directory, run `npm install` to install all dependencies. 
-  * In the terminal, navigate to the root directory and run `npm start`
+  * In the root project directory, run `npm start` 
   * Open the app in an Android emulator or iOS simulator of your choice
 
 ## Technologies Used
