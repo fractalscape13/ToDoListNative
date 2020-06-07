@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { CheckBox } from 'react-native-elements';
-import { db } from '../firebase';
+import { db } from '../firebaseConfig';
 import { set } from 'react-native-reanimated';
+import {auth} from '../firebaseConfig';
 
-export default function List({ navigation }) {
+export default function List({ navigation, signOut }) {
   const [list, setList] = useState([]);
   const [id, setId] = useState([]);
 

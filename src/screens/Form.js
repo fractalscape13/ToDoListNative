@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-native';
-import { db } from '../firebase';
+import { db } from '../firebaseConfig';
 
 export default function Form({ navigation }) {
   const [item, setItem] = useState('');

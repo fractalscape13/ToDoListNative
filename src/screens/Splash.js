@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-native';
-import {auth} from '../firebase';
+import {auth} from '../firebaseConfig';
 
 export default function Splash({ navigation, logInCapture }) {
   const [user, setUser] = useState('');
@@ -10,8 +10,7 @@ export default function Splash({ navigation, logInCapture }) {
   const signIn = () => {
       auth.signInWithEmailAndPassword(user, password)
       .then(res => {
-        console.log('res.user', res.user, 'res.user.uid', res.user.uid)
-        logInCapture(res)
+        logInCapture(res);
       })
       .catch(e => console.log('yall had an error- signIn function', e));
 
@@ -22,6 +21,7 @@ export default function Splash({ navigation, logInCapture }) {
     .then(res => {
       console.log('res.user', res.user)
       logInCapture(res)
+      setRegister(false);
     })
     .catch(e => console.log('yall had an error- signUp function', e));
   }
@@ -32,8 +32,8 @@ export default function Splash({ navigation, logInCapture }) {
       <View style={styles.form}>
         <Text style={styles.header}>Sign Up</Text>
         <TextInput onChangeText={(text) => setUser(text)}style={styles.text} autoCapitalize='none' placeholder="Email"/>
-        <TextInput onChangeText={(text) => setPassword(text)}style={styles.text} autoCapitalize='none'placeholder="Password"/>
-        <TextInput onChangeText={(text) => setPassword(text)}style={styles.text} autoCapitalize='none'placeholder="Confirm password"/>
+        <TextInput onChangeText={(text) => setPassword(text)}style={styles.text} autoCapitalize='none' secureTextEntry={true} placeholder="Password"/>
+        <TextInput onChangeText={(text) => setPassword(text)}style={styles.text} autoCapitalize='none' secureTextEntry={true} placeholder="Confirm password"/>
         <TouchableOpacity onPress={signUp}><Text style={styles.button}>Sign Up</Text></TouchableOpacity>
         <TouchableOpacity onPress={() => setRegister(false)}><Text style={styles.button}>Already registered? Click to sign in</Text></TouchableOpacity>
       </View>
@@ -43,7 +43,7 @@ export default function Splash({ navigation, logInCapture }) {
       <View style={styles.form}>
         <Text style={styles.header}>Sign In</Text>
         <TextInput onChangeText={(text) => setUser(text)}style={styles.text} autoCapitalize='none' placeholder="Email"/>
-        <TextInput onChangeText={(text) => setPassword(text)}style={styles.text} autoCapitalize='none' placeholder="Password"/>
+        <TextInput onChangeText={(text) => setPassword(text)}style={styles.text} autoCapitalize='none' secureTextEntry={true} placeholder="Password"/>
         <TouchableOpacity onPress={signIn}><Text style={styles.button}>Sign In</Text></TouchableOpacity>
         <TouchableOpacity onPress={() => setRegister(true)}><Text style={styles.button}>New? Click to register</Text></TouchableOpacity>
       </View>
